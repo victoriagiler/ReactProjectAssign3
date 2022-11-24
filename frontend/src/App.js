@@ -1,9 +1,18 @@
-import './App.css';
+import React from 'react';
+import Footer from './components/Footer'
+import Header from './components/Header'
 
-function App() {
+
+const App = () => {
   return (
-    <div>App</div>
-  )
+    <>
+      <Header/>
+      <main>
+       <h1> Welcome to Events</h1>
+      </main>
+      <Footer/>
+    </>
+  );
 }
 
 export default App;
