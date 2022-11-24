@@ -1,8 +1,13 @@
-import './App.css';
+import React from 'react'
+import Test from './Components/Test';
+
+
 
 function App() {
   return (
-    <div>App</div>
+    <>
+    <h2><Test/></h2>
+    </>
   )
 }
 
