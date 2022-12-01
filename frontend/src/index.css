@@ -1,0 +1,4 @@
+/* so that home component takes up 80% of screen */
+main {
+  min-height: 80vh;
+}
