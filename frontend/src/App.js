@@ -2,15 +2,17 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import HomeScreen from './Screens/HomeScreen'
 import EventScreen from './Screens/EventScreen';
+import Header from './Components/Header';
 
 function App() {
   return (
-    <><main>
-    <Container>
-      <HomeScreen />
-    </Container>
-  </main>
-  
+    <>
+     <Header/>
+      <main>
+      <Container>   
+        <HomeScreen />
+      </Container>
+    </main>
     </>
   )
 }
