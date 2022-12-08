@@ -8,18 +8,22 @@ const Event = ({event}) => {
 
       <Card.Body>
         <Card.Title as='div'>
-          <strong>{event.title}</strong>
+        <div>{event.title}</div>
         </Card.Title>
 
         <Card.Text as='div'>
           <div className='my-3'>
-          <div>{event.dateTime}</div> 
-          at <
-          div>{event.location}</div>
+          <div>{event.dateTime}</div>         
           </div>
         </Card.Text>
 
-        <Card.Text as='h3'>
+        <Card.Text as='div'>
+          <div className='my-3'> 
+          <div>{event.location}</div>
+          </div>
+        </Card.Text>
+
+        <Card.Text as='h4'>
             ${event.price}
         </Card.Text>
       </Card.Body>
