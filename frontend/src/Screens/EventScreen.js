@@ -2,15 +2,16 @@ import React from "react";
 import {Row, Col, Button, Image, ListGroup, Card} from "react-bootstrap";
 import EventScreenStyle from "./EventScreen.css"
 import events from "../eventsData";
+import { useParams,Link } from "react-router-dom";
 
 const EventScreen = () => {
 
-//   const {id} = useParams();
-  const event = events
+  const params = useParams();
+  const event = events.find((e) => e._id === params.id)
 
 return(
   <>
-  <a href="#" className="btn btn-light my-3">Go Back</a>
+  <Link className="btn btn-light my-3" to='/'>Go Back</Link>
   <Row>
   <Image src={event.image}/>
   </Row>
@@ -19,8 +20,8 @@ return(
     
       <Col md={7}>
         <ListGroup className="descripCard">
-        <ListGroup.Item>{event.time}</ListGroup.Item>
-        <ListGroup.Item>{event.date}</ListGroup.Item>
+        <ListGroup.Item>{event.title}</ListGroup.Item>
+        <ListGroup.Item>{event.dateTime}</ListGroup.Item>
         <ListGroup.Item>{event.description}</ListGroup.Item>
   
         </ListGroup> 
