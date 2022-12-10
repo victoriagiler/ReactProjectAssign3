@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap'
 import HomeScreen from './Screens/HomeScreen'
 import EventScreen from './Screens/EventScreen';
 import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <HomeScreen />
       </Container>
     </main>
+    <Footer />
     </>
   )
 }
