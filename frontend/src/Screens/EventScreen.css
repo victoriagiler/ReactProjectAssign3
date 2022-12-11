@@ -1,0 +1,19 @@
+.btn {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+}
+
+.price {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 40px;
+}
+
+.cardPrice {
+  margin-right: 20px;
+}
+
+.descripCard {
+  margin-left: 20px;
+}
