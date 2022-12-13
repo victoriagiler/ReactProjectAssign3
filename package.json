@@ -1,6 +1,29 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "concurrently": "^7.6.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
     "react-bootstrap": "^2.6.0"
-  }
+  },
+  "name": "reactprojectassign3",
+  "description": "Frontend Demo: https://www.youtube.com/watch?v=s0o2U5bk5Ag",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victoriagiler/ReactProjectAssign3.git"
+  },
+  "author": "Victoria Giler, Wen Huang, Hayat Kemal, Katie Park",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victoriagiler/ReactProjectAssign3/issues"
+  },
+  "homepage": "https://github.com/victoriagiler/ReactProjectAssign3#readme"
 }
