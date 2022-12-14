@@ -10,6 +10,7 @@
   "description": "Frontend Demo: https://www.youtube.com/watch?v=s0o2U5bk5Ag",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",

@@ -1,7 +1,15 @@
-const express  = require('express')
-const eventsData = require('./data/eventsData')
+import events from './data/eventsData.js'
+import express from 'express'
 
 const app = express()
-//two api to be added here
+
+app.get('/api/events', (req, res) =>{
+  res.json(events)
+})
+
+app.get('/api/event/:id', (req, res)=>{
+  const event = events.find((e) => e._id === req.params.id)
+  res.json(event)
+})
 
 app.listen(5000, console.log('Server is running on port 5000'))
