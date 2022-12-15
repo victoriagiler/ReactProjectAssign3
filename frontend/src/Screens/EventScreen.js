@@ -3,6 +3,7 @@ import {Row, Col, Button, Image, ListGroup, Card} from "react-bootstrap";
 import EventScreenStyle from "./EventScreen.css"
 import { useParams,Link } from "react-router-dom";
 
+
 const EventScreen = () => {
 
   const params = useParams();
