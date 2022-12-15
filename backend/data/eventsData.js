@@ -60,4 +60,5 @@ const events = [
     countInStock: 50,
   },
 ]
-module.exports = events
+
+export default events
