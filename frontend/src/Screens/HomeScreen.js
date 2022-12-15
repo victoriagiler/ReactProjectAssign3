@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import Event from '../Components/Event'
-import events from '../eventsData'
+import axios from 'axios'
+
 
 const Home = () => {
+  
+  const [events, setEvents] = useState([])
+
+  useEffect(()=>{
+    const fetchEvents = async () =>{
+    const {data} = await axios.get('/api/events')
+    setEvents(data)
+    }
+
+    fetchEvents()
+  })
+  
+  
   return (
     <>
     

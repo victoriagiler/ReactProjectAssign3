@@ -1,4 +1,4 @@
-import events from './data/eventsData.js'
+import events from './data/eventsData'
 import express from 'express'
 
 const app = express()

@@ -1,7 +1,6 @@
 import React from "react";
 import {Row, Col, Button, Image, ListGroup, Card} from "react-bootstrap";
 import EventScreenStyle from "./EventScreen.css"
-import axios from 'axios'
 import { useParams,Link } from "react-router-dom";
 
 const EventScreen = () => {
