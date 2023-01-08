@@ -1,6 +1,5 @@
 const events = [
   {
-    _id:'1',
     title: 'Seattle New Years Eve Party 2023',
     image: '/images/eveparty.jpg',
     price: 155,
@@ -10,7 +9,6 @@ const events = [
     countInStock: 10  
   },
   {
-    _id:'2',
     title: `Gala Galactica: New Year's Eve`,
     image:'/images/gala.jpg',
     price: 69.38,
@@ -20,7 +18,6 @@ const events = [
     countInStock:15,
   },
   {
-    _id:'3',
     title: 'Seattle Tech Career Fair: Exclusive Tech Hiring Event',
     image:'/images/tech.jpg',
     price: 10,
@@ -30,7 +27,6 @@ const events = [
     countInStock: 100,
   },
   {
-    _id:'4',
     title: 'Ballard Cocktail Trail',
     image:'/images/ballard.jpg',
     price: 45,
@@ -40,7 +36,6 @@ const events = [
     countInStock:5,
   },
   {
-    _id:'5',
     title: 'Oddities Flea Market New York City',
     image:'/images/flea.jpg',
     price: 22.85,
@@ -50,7 +45,6 @@ const events = [
     countInStock: 15,
   },
   {
-    _id:'6',
     title:'Gingerbread Jamboree (Festive Gingerbread House Decorating Party)',
     image:'/images/gingerbread.jpg',
     price:94.90,
