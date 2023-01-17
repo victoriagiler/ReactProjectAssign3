@@ -9,7 +9,8 @@
     "express-async-handler": "^1.2.0",
     "mongoose": "^6.8.1",
     "nodemon": "^2.0.20",
-    "react-bootstrap": "^2.6.0"
+    "react-bootstrap": "^2.6.0",
+    "react-redux": "^8.0.5"
   },
   "name": "reactprojectassign3",
   "description": "Frontend Demo: https://www.youtube.com/watch?v=s0o2U5bk5Ag",
