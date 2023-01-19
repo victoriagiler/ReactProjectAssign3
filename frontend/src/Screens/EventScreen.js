@@ -1,13 +1,34 @@
-import React from "react";
+// import React from "react";
+import React, { useEffect, useState } from 'react'
 import {Row, Col, Button, Image, ListGroup, Card} from "react-bootstrap";
 import EventScreenStyle from "./EventScreen.css"
 import { useParams,Link } from "react-router-dom";
-
+import axios from 'axios'
+import Event from '../Components/Event';
 
 const EventScreen = () => {
-
   const params = useParams();
-  const event = events.find((e) => e._id === params.id)
+  const [event, setEvent] = useState({})
+  useEffect(() =>{
+    const fetchEvent = async() =>{
+      const {data} = await axios.get('/api/event/${params.id}')
+      setEvent(data)
+    }
+    fetchEvent()
+  }, [params])
+
+  // Failed to compile
+  // ./src/Screens/EventScreen.js
+  //   Line 9:   'useState' is not defined   no-undef
+  //   Line 10:   'useEffect' is not defined  no-undef
+  //   Line 12:  'axios' is not defined      no-undef
+  
+  // Search for the keywords to learn more about each error.
+
+// const EventScreen = () => {
+
+//   const params = useParams();
+//   const event = events.find((e) => e._id === params.id)
 
 return(
   <>
