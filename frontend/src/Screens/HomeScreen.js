@@ -9,7 +9,7 @@ const Home = () => {
 
   const dispatch = useDispatch()
   const eventList = useSelector((state) => state.eventList)
-  const {loading, error, events} = productList
+  const {loading, error, events} = eventList
   
   useEffect(()=>{
     dispatch(listEvents())
