@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col } from 'react-bootstrap'
 import Event from '../Components/Event'
-import axios from 'axios'
+import { listEvents } from '../actions/eventActions'
 
 
 const Home = () => {
+
+  const dispatch = useDispatch()
+  const eventList = useSelector((state) => state.eventList)
+  const {loading, error, events} = eventList
   
-  const [events, setEvents] = useState([])
-
   useEffect(()=>{
-    const fetchEvents = async () =>{
-    const {data} = await axios.get('/api/events')
-    setEvents(data)
-    }
-
-    fetchEvents()
-  },[])
+    dispatch(listEvents())
+  },[dispatch])
   
   
   return (
