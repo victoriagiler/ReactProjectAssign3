@@ -1,26 +1,36 @@
 // import React from "react";
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, /*useState*/ } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {Row, Col, Button, Image, ListGroup, Card} from "react-bootstrap";
 import EventScreenStyle from "./EventScreen.css"
+import { listEventsDetials } from '../actions/eventActions';
 import { useParams,Link, useNavigate } from "react-router-dom";
-import axios from 'axios'
+//import axios from 'axios'
 import Event from '../Components/Event';
 
 const EventScreen = () => {
 
   const [qty, setQty]= useState(1)
   const params = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   
-  const [event, setEvent] = useState({})
-  useEffect(() =>{
+ // const [event, setEvent] = useState({}) **this was deleted as part of clean up
+  /*useEffect(() =>{
     const fetchEvent = async() =>{
       const {data} = await axios.get(`/api/event/${params.id}`)
       setEvent(data)
     }
     fetchEvent()
-  })
+  })*/
+
+  const eventDetails = useSelector((state) => state.
+  eventDetails)
+  const {loading, error, event} = eventDetails
+  useEffect(() =>{
+   dispatch(listEventsDetials(params.id))
+  }, [dispatch,params])
 
     const addToCartHandler = () => {
     navigate(`/cart/${params.id}?qty=${qty}`)}
@@ -28,6 +38,12 @@ const EventScreen = () => {
 return(
   <>
   <Link className="btn btn-light my-3" to='/'>Go Back</Link>
+  {loading ? (
+      <Loader />
+    ) : error ? (
+      <Message variant='danger'>{error}</Message>
+    ) : (
+  <div>
   <Row>
   <Image src={event.image}/>
   </Row>
@@ -57,6 +73,8 @@ return(
       </Card>
       </Col>            
   </Row>
+  </div>
+    )}
   </>
 )
 }
