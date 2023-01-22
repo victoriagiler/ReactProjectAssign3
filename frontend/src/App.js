@@ -5,6 +5,7 @@ import EventScreen from './Screens/EventScreen';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import CartScreen from './Screens/CartScreen';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Routes>
         <Route path="/" element={<HomeScreen />} exact />
         <Route path="/event/:id" element={<EventScreen/>}/>
+        <Route path="/cart/:id" element={<CartScreen/>}/>
+
         </Routes> 
       </Container>
     </main>

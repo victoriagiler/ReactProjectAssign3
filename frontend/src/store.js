@@ -1,10 +1,11 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit'
+import { cartReducer } from './reducers/cartReducers'
 import { eventListReducer } from './reducers/eventReducers'
 
 
 const rootReducer = combineReducers({
   eventList: eventListReducer,
-
+  cart: cartReducer
 
 })
 
