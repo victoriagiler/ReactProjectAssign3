@@ -25,7 +25,7 @@ export const cartReducer = (state = {cartItems: []}, action) => {
 
       return {
         ...state,
-        cartItems: state.cartItems.filter((x) => x.event !== action.payload.event)
+        cartItems: state.cartItems.filter((x) => x.event !== action.payload)
       }
 
     default:
