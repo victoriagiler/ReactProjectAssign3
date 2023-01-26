@@ -64,6 +64,38 @@ return(
       <Card className="cardPrice">
         <ListGroup.Item className="price"><strong>${event.price}</strong></ListGroup.Item>
         <ListGroup.Item>
+          <Col>Status</Col>
+          <Col>{event.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+          </Col>
+        </ListGroup.Item>
+        
+        {event.countInStock > 0 && (
+          <ListGroup.Item>
+            <Row>
+              <Col>QTY:</Col>
+              <Col>
+              <Form.Control
+              as = 'select'
+              value = {qty}
+              onChange={(e) => setQty(e.target.value)}>
+                {[...Array](event.countInStock).keys().map((x) =>(
+                  <option key={x + 1} value={x + 1}>
+                    {x + 1}
+
+                  </option>
+                ))
+                }
+              </Form.Control>
+
+              </Col>
+            </Row>
+          </ListGroup.Item>
+        )}
+
+
+
+
+        <ListGroup.Item>
           <Row>
           <Button className="btn btn-block" type="button">
             Get Tickets 
