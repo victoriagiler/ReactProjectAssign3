@@ -3,12 +3,14 @@ import dotenv from 'dotenv'
 import connectDB from './config/db.js'
 import eventRoutes from './routes/eventRoutes.js'
 import errorHandler from './middleware/errormiddleware.js'
+import userRoutes from './routes/userRoutes.js'
 
 const app = express()
 dotenv.config()
 connectDB()
 
 app.use('/api/events', eventRoutes)
+app.use('/api/users', userRoutes)
 
 app.use(errorHandler)
 

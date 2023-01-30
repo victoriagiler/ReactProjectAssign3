@@ -9,10 +9,16 @@ const rootReducer = combineReducers({
   cart: cartReducer
 
 })
+const cartItemsFromStorage = localStorage.getItem('cartItems') ? 
+JSON.parse(localStorage.getItem('cartItems')) : []
+
+const initialState = {
+  cart: {cartItems: cartItemsFromStorage}
+}
 
 const store = configureStore({
-  reducer: {rootReducer},
-  preloadedState:{},
+  reducer: rootReducer,
+  preloadedState:initialState,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
     immutableCheck: false,
     serializableCheck: false,

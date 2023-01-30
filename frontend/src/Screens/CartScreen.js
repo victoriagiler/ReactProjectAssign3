@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import { addToCart, removeFromCart } from '../actions/cartActions'
+import Message from '../Components/Message'
 
 const CartScreen = () => {
 const location = useLocation()
@@ -34,8 +35,9 @@ const checkoutHandler = () => {
         Go Back
       </Link>
       {cartItems.length === 0 ? (  
-       <h1> Your cart is empty 
-        <Link to='/'>Go Back</Link> </h1>  
+        <Message>
+        Your cart is empty <Link to='/'>Go Back</Link>
+      </Message>
       ) : ( 
         <ListGroup variant='flush'>
           {cartItems.map((item) => (

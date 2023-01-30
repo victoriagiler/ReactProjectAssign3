@@ -1,11 +1,11 @@
-// import React from "react";
-import React, { useEffect, /*useState*/ } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {Row, Col, Button, Image, ListGroup, Card} from "react-bootstrap";
+import {Row, Col, Button, Image, ListGroup, Card, Form} from "react-bootstrap";
 import EventScreenStyle from "./EventScreen.css"
 import { listEventsDetials } from '../actions/eventActions';
 import { useParams,Link, useNavigate } from "react-router-dom";
-//import axios from 'axios'
+import Loader from '../Components/Loader'
+import Message from '../Components/Message';
 import Event from '../Components/Event';
 
 const EventScreen = () => {
@@ -25,8 +25,7 @@ const EventScreen = () => {
     fetchEvent()
   })*/
 
-  const eventDetails = useSelector((state) => state.
-  eventDetails)
+  const eventDetails = useSelector((state) => state.eventDetails)
   const {loading, error, event} = eventDetails
   useEffect(() =>{
    dispatch(listEventsDetials(params.id))

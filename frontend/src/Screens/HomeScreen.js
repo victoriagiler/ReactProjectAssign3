@@ -7,7 +7,7 @@ import Loader from '../Components/Loader'
 import Message from '../Components/Message'
 
 
-const Home = () => {
+const HomeScreen = () => {
 
   const dispatch = useDispatch()
   const eventList = useSelector((state) => state.eventList)
@@ -41,4 +41,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomeScreen

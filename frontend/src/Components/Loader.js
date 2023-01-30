@@ -14,7 +14,9 @@ const Loader = () => {
 
             }}
         >
-            <span class ='sr-only'>Loading...</span>
+            <span className ='sr-only'>Loading...</span>
         </Spinner>
     )
 }
+
+export default Loader
