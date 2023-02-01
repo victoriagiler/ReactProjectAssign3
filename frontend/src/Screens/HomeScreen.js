@@ -29,7 +29,7 @@ const HomeScreen = () => {
     ) : (
       <Row>
         {events.map((event)=> (
-          <Col sm={12} md={6} lg={4} xl={4}>
+          <Col key={event._id} sm={12} md={6} lg={4} xl={4}>
           <Event event={event} />
           </Col>
         ))}

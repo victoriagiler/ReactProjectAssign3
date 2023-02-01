@@ -6,6 +6,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import CartScreen from './Screens/CartScreen';
+import LoginScreen from './Screens/LoginScreen';
 
 function App() {
   return (
@@ -16,13 +17,15 @@ function App() {
       <Container>  
         <Routes>
         <Route path="/" element={<HomeScreen />} exact />
+        <Route path="/login" element={<LoginScreen/>}/>
         <Route path="/event/:id" element={<EventScreen/>}/>
         <Route path="/cart" element={<CartScreen/>}/>
         <Route path="/cart/:id" element={<CartScreen/>}/>
+
         </Routes> 
       </Container>
     </main>
-    <Footer />
+ 
     </Router>
     </>
   )

@@ -16,9 +16,6 @@ export const listEvents = () => async (dispatch) =>{
         type: EVENT_LIST_SUCCESS, 
         payload: data 
       })
-
-
-
   } catch (error){
     dispatch ({
       type: EVENT_LIST_FAIL,
