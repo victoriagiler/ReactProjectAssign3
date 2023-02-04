@@ -2,6 +2,7 @@ import {configureStore, combineReducers} from '@reduxjs/toolkit'
 import { cartReducer } from './reducers/cartReducers'
 import { eventListReducer, eventDetailsReducer } from './reducers/eventReducers'
 import { userLoginReducer } from './reducers/userReducers'
+import { orderCreateReducer, orderDetailsReducer } from './reducers/orderReducers'
 
 
 const rootReducer = combineReducers({
@@ -9,6 +10,8 @@ const rootReducer = combineReducers({
   eventDetails: eventDetailsReducer,
   cart: cartReducer,
   userLogin: userLoginReducer,
+  orderCreate: orderCreateReducer,
+  orderDetails: orderDetailsReducer
 
 })
 
