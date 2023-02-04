@@ -1,7 +1,7 @@
 import { ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_CREATE_FAIL, ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_DETAILS_FAIL } from "../constants/orderConstants";
 
 
- export const orderCreateReducer = (state = {order}, action) => {
+ export const orderCreateReducer = (state = {}, action) => {
   switch(action.type){
     case ORDER_CREATE_REQUEST:
       return{loading: true}
@@ -25,7 +25,7 @@ import { ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_CREATE_FAIL, ORDER_DE
  }
 
 export const orderDetailsReducer = (state = {loading: true, orderItems:[], shippingAddress: {}}, action) =>{
-  switch(type.action){
+  switch(action.type){
 
   case ORDER_DETAILS_REQUEST:
     return{

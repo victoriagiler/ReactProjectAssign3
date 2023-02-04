@@ -4,7 +4,7 @@ import {Row, Col, Button, Image, ListGroup, Card, Form} from "react-bootstrap";
 import { useParams,Link, useNavigate } from "react-router-dom";
 import Message from '../Components/Message';
 import { createOrder } from '../actions/orderActions';
-//import CheckoutSteps from '../components/CheckoutSteps'
+import CheckoutSteps from '../Components/CheckoutSteps'
 
 
 const PlaceOrderScreen = () => {
@@ -29,7 +29,7 @@ const PlaceOrderScreen = () => {
     Number(cart.taxPrice)
   ).toFixed(2)
 
-  const orderCreate = useSelctor((state) => state.orderCreate)
+  const orderCreate = useSelector((state) => state.orderCreate)
   const {order, success, error} = orderCreate
 
   useEffect(() => {

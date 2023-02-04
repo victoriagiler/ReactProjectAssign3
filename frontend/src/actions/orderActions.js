@@ -12,7 +12,7 @@ export const createOrder = (order) => async(dispatch, getState) =>{
   
     } = getState()
   
-    const conif ={
+    const config ={
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${userInfo.token}`,
@@ -51,7 +51,7 @@ export const createOrder = (order) => async(dispatch, getState) =>{
     
       } = getState()
     
-      const conif ={
+      const config ={
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
     
@@ -67,7 +67,7 @@ export const createOrder = (order) => async(dispatch, getState) =>{
 
     }catch(error){
       dispatch ({
-        type: ORDER_CREATE_FAIL,
+        type: ORDER_DETAILS_FAIL,
         payload: 
         error.response && error.response.data.message ?
         error.response.data.message : error.message
@@ -79,4 +79,3 @@ export const createOrder = (order) => async(dispatch, getState) =>{
 
   }
 
-  export {createOrder, orderDetails}
