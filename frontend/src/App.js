@@ -7,6 +7,7 @@ import Footer from './Components/Footer';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import CartScreen from './Screens/CartScreen';
 import LoginScreen from './Screens/LoginScreen';
+import PlaceOrderScreen from './Screens/PlaceOrderScreen';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/event/:id" element={<EventScreen/>}/>
         <Route path="/cart" element={<CartScreen/>}/>
         <Route path="/cart/:id" element={<CartScreen/>}/>
+        <Route path ="/placeorder" element={<PlaceOrderScreen/>}/>
 
         </Routes> 
       </Container>
