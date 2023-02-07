@@ -7,8 +7,7 @@ const router= express.Router()
 // @route GET/api/events/
 // @access public
 
-router.get('/', getEvents
-)
+router.get('/', getEvents)
 
 // @desc fetch a single event
 // @route GET/api/event/:id
