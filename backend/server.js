@@ -10,6 +10,7 @@ const app = express()
 dotenv.config()
 connectDB()
 
+app.use(express.json())
 app.use('/api/events', eventRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/orders', orderRoutes)

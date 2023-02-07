@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {Row, Col, Button, Image, ListGroup, Card, Form} from "react-bootstrap";
-import EventScreenStyle from "./EventScreen.css"
 import { listEventsDetials } from '../actions/eventActions';
 import { useParams,Link, useNavigate } from "react-router-dom";
 import Loader from '../Components/Loader'
 import Message from '../Components/Message';
-import Event from '../Components/Event';
+
 
 const EventScreen = () => {
 
@@ -15,18 +14,9 @@ const EventScreen = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
 
-  
- // const [event, setEvent] = useState({}) **this was deleted as part of clean up
-  /*useEffect(() =>{
-    const fetchEvent = async() =>{
-      const {data} = await axios.get(`/api/event/${params.id}`)
-      setEvent(data)
-    }
-    fetchEvent()
-  })*/
-
   const eventDetails = useSelector((state) => state.eventDetails)
   const {loading, error, event} = eventDetails
+
   useEffect(() =>{
    dispatch(listEventsDetials(params.id))
   }, [dispatch,params])
@@ -44,17 +34,14 @@ return(
     ) : (
   <div>
   <Row>
-  <Image src={event.image}/>
+    <Image src={event.image} />
   </Row>
-  
-  <Row>
-    
+  <Row> 
       <Col md={7}>
         <ListGroup className="descripCard">
         <ListGroup.Item>{event.title}</ListGroup.Item>
         <ListGroup.Item>{event.dateTime}</ListGroup.Item>
         <ListGroup.Item>{event.description}</ListGroup.Item>
-  
         </ListGroup> 
       </Col>
     
@@ -77,7 +64,7 @@ return(
               as = 'select'
               value = {qty}
               onChange={(e) => setQty(e.target.value)}>
-                {[...Array](event.countInStock).keys().map((x) =>(
+                {[...Array(event.countInStock).keys()].map((x) =>(
                   <option key={x + 1} value={x + 1}>
                     {x + 1}
 
@@ -90,13 +77,11 @@ return(
             </Row>
           </ListGroup.Item>
         )}
-
-
-
-
         <ListGroup.Item>
           <Row>
-          <Button className="btn btn-block" type="button">
+          <Button className="btn btn-block" type="button"            
+          disabled={event.countInStock === 0}
+            onClick={addToCartHandler}>
             Get Tickets 
           </Button>
           </Row>
