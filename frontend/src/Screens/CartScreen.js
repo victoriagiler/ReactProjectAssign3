@@ -9,7 +9,7 @@ const CartScreen = () => {
 const location = useLocation()
 const params = useParams()
 const navigate = useNavigate()
-const eventId = params.div
+const eventId = params.id
 const qty = location.search ? Number(location.search.split('=')[1]): 1 
 const dispatch = useDispatch()
 const cart = useSelector((state) => state.cart )

@@ -9,7 +9,7 @@ const router = express.Router()
 router.post('/login', authUser)
 
 //@desc   Get the user profile
-//@route  POST/api/users/profile
+//@route  GET/api/users/profile
 //@access private
 router.route('/profile').get(protect, getUserProfile)
 
