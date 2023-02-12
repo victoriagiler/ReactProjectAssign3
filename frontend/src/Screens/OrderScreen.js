@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import {PayPalButton} from 'react-paypal-button-v2'
+import { PayPalButton } from 'react-paypal-button-v2'
 import { Link, useParams,  } from 'react-router-dom'
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,7 +19,7 @@ const OrderScreen = () => {
   const orderDetails = useSelector((state) => state.orderDetails)
   const { order, loading, error } = orderDetails
 
-  const orderPay = useSelector ((state) => state.orderPay)
+  const orderPay = useSelector((state) => state.orderPay)
   const { loading: loadingPay, success: successPay } = orderPay
 
   if (!loading) {
@@ -35,10 +35,10 @@ const OrderScreen = () => {
 
   useEffect(() => { 
     const addPayPalScript = async () => {
-      const { data: clientID } = await axios.get('/api/config/paypal')
+      const { data: clientId } = await axios.get('/api/config/paypal')
       const script = document.createElement('script')
       script.type = 'text/javascript'
-      script.src = 'https://www.paypal.com/sdk/js?client-id=${clientID}'
+      script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
       script.async = true
       script.onload = () => {
         setSdkReady(true)
@@ -46,8 +46,8 @@ const OrderScreen = () => {
       document.body.appendChild(script)
     }
 
-    if (!order || successPay){
-      dispatch({ type: ORDER_PAY_RESET})
+    if (!order || successPay) {
+      dispatch({ type: ORDER_PAY_RESET })
       dispatch(getOrderDetails(orderId))
     }else if (!order.isPaid) {
       if (!window.paypal) {
