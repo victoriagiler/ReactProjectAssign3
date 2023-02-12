@@ -2,7 +2,7 @@ import {configureStore, combineReducers} from '@reduxjs/toolkit'
 import { cartReducer } from './reducers/cartReducers'
 import { eventListReducer, eventDetailsReducer } from './reducers/eventReducers'
 import { userLoginReducer } from './reducers/userReducers'
-import { orderCreateReducer, orderDetailsReducer } from './reducers/orderReducers'
+import { orderCreateReducer, orderDetailsReducer, orderPayReducer, } from './reducers/orderReducers'
 
 
 const rootReducer = combineReducers({
@@ -11,8 +11,8 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   userLogin: userLoginReducer,
   orderCreate: orderCreateReducer,
-  orderDetails: orderDetailsReducer
-
+  orderDetails: orderDetailsReducer,
+  orderPay: orderPayReducer,
 })
 
 const shippingAddressFromStorage = localStorage.getItem('shippingAddress') ? JSON.parse(localStorage.getItem('shippingAddress')) : {}
